@@ -2,11 +2,12 @@ from src.models.dish import Dish  # noqa: F401, E261, E501
 from src.models.ingredient import Ingredient
 import pytest
 
+
 # Req 2
 def test_dish():
     dish1 = Dish("Burguer", 24.99)
     dish2 = Dish("Shrimp Salad", 30.99)
-    
+
     assert dish1.name == "Burguer"
     assert dish2.name == "Shrimp Salad"
     assert dish1.price == 24.99
@@ -38,6 +39,6 @@ def test_dish():
 
     with pytest.raises(TypeError):
         Dish("BBQ", "Not a Number")
-    
+
     with pytest.raises(ValueError):
         Dish("BBQ", -50.99)
